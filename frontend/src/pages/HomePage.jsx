@@ -9,8 +9,6 @@ import { useNavigate } from 'react-router-dom';
 
 function HomePage() {
   const navigate = useNavigate();
-
-  // Clear login session on Home load (both vars)
   useEffect(() => {
     localStorage.removeItem('isLoggedIn');
     localStorage.removeItem('role');
