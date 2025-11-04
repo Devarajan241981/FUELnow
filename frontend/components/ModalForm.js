@@ -12,7 +12,7 @@ function LoginPage() {
   const [message, setMessage] = useState('');
   const [loading, setLoading] = useState(false);
 
-  // Request OTP from backend
+ 
   const requestOTP = async () => {
     setLoading(true);
     setMessage('');
@@ -34,8 +34,6 @@ function LoginPage() {
     }
     setLoading(false);
   };
-
-  // Verify OTP with backend
   const handleLogin = async () => {
     setLoading(true);
     setMessage('');
@@ -48,7 +46,7 @@ function LoginPage() {
       const data = await res.json();
       if (data.success) {
         setMessage('Login successful!');
-        // You can add redirect logic here
+        
       } else {
         setMessage(data.message || 'OTP verification failed');
       }
